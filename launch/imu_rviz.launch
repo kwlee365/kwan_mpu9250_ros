@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <node name="imu_tf" pkg="kwan_mpu9250_ros" type="kwan_mpu9250_ros" output="screen"/>
+
+  <node name="imu_filter_node_for_orientation" pkg="imu_complementary_filter" type="complementary_filter_node" output="screen"/>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find kwan_mpu9250_ros)/rviz/rviz_config.rviz" required="true"/> 
+
+</launch>
